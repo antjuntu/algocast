@@ -4,9 +4,32 @@
 // form the same word if it is reversed. *Do* include spaces
 // and punctuation in determining if the string is a palindrome.
 // --- Examples:
-//   palindrome("abba") === true
+//   palindrome("absba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  return str.split('').every((char, i) => {
+    return char === str[str.length - i - 1]
+  })
+}
 
 module.exports = palindrome;
+
+// function palindrome(str) {
+//   const reveresed = str.split('').reverse().join('')
+//   return str === reveresed
+// }
+
+// function palindrome(str) {
+//   let start = 0
+//   let end = str.length - 1
+//   while(start < end) {
+//     console.log(str[start], str[end])
+//     if (str[start] !== str[end]) {
+//       return false
+//     }
+//     start++
+//     end--
+//   }
+//   return true
+// }
